@@ -1,6 +1,6 @@
 {
   "name": "@riotprompt/riotplan-cli",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "CLI for RiotPlan - manage and execute plans",
   "type": "module",
   "bin": {
@@ -8,9 +8,13 @@
   },
   "main": "./dist/cli.js",
   "scripts": {
+    "clean": "rm -rf dist",
     "build": "vite build",
-    "test": "vitest run",
-    "lint": "eslint src"
+    "test": "vitest run --coverage",
+    "test:coverage": "vitest run --coverage",
+    "lint": "eslint src",
+    "precommit": "npm run lint && npm run test",
+    "prepublishOnly": "npm run clean && npm run build"
   },
   "keywords": [
     "cli",
@@ -24,7 +28,7 @@
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kjerneverk/riotplan-cli"
+    "url": "https://github.com/kjerneverk/riotplan-cli"
   },
   "dependencies": {
     "chalk": "^5.4.1",
@@ -40,6 +44,7 @@
   },
   "devDependencies": {
     "@types/node": "^22.15.29",
+    "@vitest/coverage-v8": "^3.2.4",
     "eslint": "^9.29.0",
     "eslint-plugin-import": "^2.32.0",
     "typescript": "^5.8.3",
