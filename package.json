@@ -28,7 +28,7 @@
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kjerneverk/riotplan-cli"
+    "url": "https://github.com/kjerneverk/riotplan-cli"
   },
   "dependencies": {
     "chalk": "^5.4.1",
