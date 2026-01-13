@@ -38,7 +38,7 @@
     "commander": "^14.0.2"
   },
   "peerDependencies": {
-    "@riotprompt/riotplan": "^0.0.3"
+    "@riotprompt/riotplan": "^0.0.4"
   },
   "peerDependenciesMeta": {
     "@riotprompt/riotplan": {
