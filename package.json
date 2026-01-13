@@ -1,6 +1,6 @@
 {
   "name": "@riotprompt/riotplan-cli",
-  "version": "0.0.3-dev.0",
+  "version": "0.0.3",
   "description": "CLI for RiotPlan - manage and execute plans",
   "type": "module",
   "bin": {
