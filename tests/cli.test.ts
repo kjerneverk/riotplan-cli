@@ -8,7 +8,7 @@ import { describe, it, expect } from 'vitest';
 import { execSync } from 'child_process';
 import { join } from 'path';
 
-const CLI_PATH = join(__dirname, '..', 'dist', 'cli.js');
+const CLI_PATH = join(import.meta.dirname, '..', 'dist', 'cli.js');
 
 function runCli(args: string): string {
   try {
@@ -142,4 +142,3 @@ describe('riotplan CLI', () => {
     });
   });
 });
-
