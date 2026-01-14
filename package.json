@@ -34,6 +34,7 @@
     "url": "https://github.com/kjerneverk/riotplan-cli"
   },
   "dependencies": {
+    "@theunwalked/cardigantime": "^0.0.22",
     "chalk": "^5.4.1",
     "commander": "^14.0.2"
   },
