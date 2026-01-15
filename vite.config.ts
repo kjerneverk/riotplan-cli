@@ -17,10 +17,8 @@ export default defineConfig({
         "node:path",
         "node:fs/promises",
         "node:process",
+        "node:os",
       ],
-      output: {
-        banner: "#!/usr/bin/env node",
-      },
     },
     sourcemap: true,
     minify: false,
