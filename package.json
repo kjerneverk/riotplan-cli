@@ -1,6 +1,6 @@
 {
   "name": "@riotprompt/riotplan-cli",
-  "version": "0.0.4-dev.0",
+  "version": "1.0.0-dev.0",
   "description": "CLI for RiotPlan - manage and execute plans",
   "type": "module",
   "bin": {
@@ -34,7 +34,7 @@
     "url": "https://github.com/kjerneverk/riotplan-cli"
   },
   "dependencies": {
-    "@riotprompt/riotplan": "^0.0.4",
+    "@riotprompt/riotplan": "^1.0.0",
     "@riotprompt/riotplan-commands-plan": "file:../commands-plan",
     "@riotprompt/riotplan-commands-status": "file:../commands-status",
     "@riotprompt/riotplan-commands-step": "file:../commands-step",
