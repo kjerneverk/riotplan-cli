@@ -4,10 +4,12 @@
  * RiotPlan CLI
  *
  * Command-line interface for managing and executing plans.
+ * This is a thin shell that imports commands from separate packages.
  *
  * Commands:
  * - riotplan plan init <name>     Create a new plan
  * - riotplan plan validate [path] Validate plan structure
+ * - riotplan plan archive [path]  Archive a completed plan
  * - riotplan status [path]        Show current status
  * - riotplan step list [path]     List steps
  * - riotplan step add <title>     Add a step
@@ -19,12 +21,12 @@
 
 import { Command } from "commander";
 import chalk from "chalk";
-import {
-    registerPlanCommands,
-    registerStatusCommands,
-    registerStepCommands,
-    registerFeedbackCommands,
-} from "./commands/index.js";
+
+// Import command registration functions from command packages
+import { registerPlanCommands } from "@riotprompt/riotplan-commands-plan";
+import { registerStatusCommands } from "@riotprompt/riotplan-commands-status";
+import { registerStepCommands } from "@riotprompt/riotplan-commands-step";
+import { registerFeedbackCommands } from "@riotprompt/riotplan-commands-feedback";
 
 const VERSION = "0.0.4";
 
@@ -43,7 +45,7 @@ export function createProgram(): Command {
             subcommandTerm: (cmd) => cmd.name(),
         });
 
-    // Register command groups
+    // Register command groups from packages
     registerPlanCommands(program);
     registerStatusCommands(program);
     registerStepCommands(program);
@@ -57,7 +59,9 @@ export function createProgram(): Command {
 
     // Handle unknown commands
     program.on("command:*", () => {
+        // eslint-disable-next-line no-console
         console.error(chalk.red(`Unknown command: ${program.args.join(" ")}`));
+        // eslint-disable-next-line no-console
         console.log(`Run ${chalk.cyan("riotplan --help")} for usage.`);
         process.exit(1);
     });
