@@ -34,17 +34,10 @@
     "url": "https://github.com/kjerneverk/riotplan-cli"
   },
   "dependencies": {
+    "@riotprompt/riotplan": "^0.0.4",
     "@theunwalked/cardigantime": "^0.0.22",
     "chalk": "^5.4.1",
     "commander": "^14.0.2"
-  },
-  "peerDependencies": {
-    "@riotprompt/riotplan": "^0.0.4"
-  },
-  "peerDependenciesMeta": {
-    "@riotprompt/riotplan": {
-      "optional": true
-    }
   },
   "devDependencies": {
     "@types/node": "^22.15.29",
